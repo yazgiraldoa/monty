@@ -111,3 +111,33 @@ void error_mod(int num_line, char **tokens, stack_t **stack, FILE *file)
 		exit(EXIT_FAILURE);
 	}
 }
+
+/**
+ * error_pchar - function that prints an error message and
+ * exit the program.
+ * @num_line: number of line in file where we found the command.
+ * @tokens: tokenized string passed by parameter.
+ * @stack: top pointer of a doubly linked list.
+ * @file: pointer to the open file.
+ * Return: nothing.
+ */
+
+void error_pchar(int num_line, char **tokens, stack_t **stack, FILE *file)
+{
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", num_line);
+		free(tokens[0]);
+		free(tokens);
+		fclose(file);
+		exit(EXIT_FAILURE);
+	}
+	if ((*stack)->n < 0 || (*stack)->n > 127)
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", num_line);
+		free(tokens[0]);
+		free(tokens);
+		fclose(file);
+		exit(EXIT_FAILURE);
+	}
+}

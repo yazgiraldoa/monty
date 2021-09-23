@@ -59,6 +59,7 @@ void error_sub(int num_line, char **tokens, stack_t **stack, FILE *file);
 void error_div(int num_line, char **tokens, stack_t **stack, FILE *file);
 void error_mul(int num_line, char **tokens, stack_t **stack, FILE *file);
 void error_mod(int num_line, char **tokens, stack_t **stack, FILE *file);
+void error_pchar(int num_line, char **tokens, stack_t **stack, FILE *file);
 
 /*Command functions*/
 void push(stack_t **stack, unsigned int line_number);
@@ -72,6 +73,8 @@ void sub(stack_t **stack, unsigned int line_number);
 void _div(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
 
 static const instruction_t op_list[] = {
 		{"push", push},
@@ -85,6 +88,8 @@ static const instruction_t op_list[] = {
 		{"div", _div},
 		{"mul", mul},
 		{"mod", mod},
+		{"pchar", pchar},
+		{"pstr", pstr},
 		{NULL, NULL}
 };
 

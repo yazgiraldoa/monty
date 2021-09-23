@@ -71,6 +71,8 @@ void ev(char **tokens, stack_t **stack, unsigned int num_line, FILE *file)
 		error_mul(num_line, tokens, stack, file);
 	else if (strcmp(tokens[0], "mod") == 0)
 		error_mod(num_line, tokens, stack, file);
+	else if (strcmp(tokens[0], "pchar") == 0)
+		error_pchar(num_line, tokens, stack, file);
 
 	f = get_instruction(tokens[0]);
 	if (!f)
