@@ -11,7 +11,6 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new;
-	extern int node_data;
 	(void) line_number;
 
 	new = malloc(sizeof(stack_t));

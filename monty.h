@@ -88,4 +88,7 @@ static const instruction_t op_list[] = {
 		{NULL, NULL}
 };
 
+/*Global variables*/
+int node_data;
+
 #endif /* MONTY_H */

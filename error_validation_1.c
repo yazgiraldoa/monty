@@ -12,7 +12,6 @@
 
 void error_push(int num_line, char **tokens, stack_t **stack, FILE *file)
 {
-	extern int node_data;
 	int i = 0;
 
 	if (tokens[1] == NULL)

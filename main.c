@@ -1,6 +1,5 @@
 #define  _POSIX_C_SOURCE 200809L
 #include "monty.h"
-int node_data = 0;
 
 /**
  * main - main function of Monty interpreter.
@@ -30,10 +29,9 @@ int main(int ac, char **av)
 		num_line++;
 		tokens = tokenizer(line, "\n\t ");
 		if (tokens == NULL)
-		{
 			continue;
-		}
-		ev(tokens, &stack, num_line, file);
+		if (tokens[0][0] != '#')
+			ev(tokens, &stack, num_line, file);
 		free(tokens);
 	}
 	free(line);
